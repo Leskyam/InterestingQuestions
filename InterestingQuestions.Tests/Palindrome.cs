@@ -1,10 +1,11 @@
-using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
+using Palimdrome;
 
 namespace InterestingQuestions.Tests
 {
     [TestClass]
-    public class Palindrome
+    public class PalindromeTest
     {
 
         [TestMethod]
@@ -16,23 +17,24 @@ namespace InterestingQuestions.Tests
             var v = value;
 
             // Action
-            throw new ArgumentNullException();
+            Palindrome.IsAPalindrome(v);
 
             // Assert
         }
 
         [DataTestMethod]
         [DataRow(data1: new char[] { 'm', 'o', 'm' })]
-        [DataRow(data1: new char[] { 'm', 'a', 'm', 'a' })]
+        [DataRow(data1: new char[] { 'Y', 'a', 'n', 'a', 'y' })]
         public void IsAPalindrome_EvenAndOddArraysLength_True(char[] value)
         {
             // Arrange
             var v = value;
 
             // Action
+            var result = Palindrome.IsAPalindrome(v);
 
             // Assert
-            Assert.IsTrue(true);
+            Assert.IsTrue(result);
         }
 
         [DataTestMethod]
@@ -42,10 +44,12 @@ namespace InterestingQuestions.Tests
         {
             // Arrange
             var v = value;
-            // Action
 
+            // Action
+            var result = Palindrome.IsAPalindrome(v);
+            
             // Assert
-            Assert.IsFalse(false);
+            Assert.IsFalse(result);
         }
     }
 }
