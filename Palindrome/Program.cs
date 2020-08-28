@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Palimdrome
+namespace InterestingQuestions
 {
     class Program
     {

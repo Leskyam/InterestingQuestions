@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Palimdrome\Palimdrome.csproj" />
+    <ProjectReference Include="..\Palindrome\Palindrome.csproj" />
   </ItemGroup>
 
 </Project>

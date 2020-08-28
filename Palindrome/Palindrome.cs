@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Palimdrome
+namespace InterestingQuestions
 {
     public static class Palindrome
     {
@@ -17,7 +17,7 @@ namespace Palimdrome
             if (object.Equals(sequence, null)) { throw new ArgumentNullException($"The argument \"{nameof(sequence)}\" cannot be null."); }
 
             // We only need to iterate through the first half, or half + "1", if the length is an odd number.
-            var limit = sequence.Length % 2 == 0 ? sequence.Length/2 : sequence.Length / 2 + 1;
+            var limit = (int)Math.Round((double)sequence.Length / 2, 0, MidpointRounding.AwayFromZero);
             for (int i = sequence.GetLowerBound(0); i < limit; i++)
             {
                 if (string.Compare(sequence[i].ToString(), sequence[sequence.GetUpperBound(0) - i].ToString(), true) != 0) return false;
