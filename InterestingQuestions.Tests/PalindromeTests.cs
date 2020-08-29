@@ -22,7 +22,9 @@ namespace InterestingQuestions.Tests
         }
 
         [DataTestMethod]
+        [DataRow(data1: new char[] { 'a' })]
         [DataRow(data1: new char[] { 'm', 'o', 'm' })]
+        [DataRow(data1: new char[] { 'm', 'o', 'o', 'm' })]
         [DataRow(data1: new char[] { 'Y', 'a', 'n', 'a', 'y' })]
         public void IsAPalindrome_EvenAndOddArraysLength_True(char[] value)
         {
@@ -39,6 +41,7 @@ namespace InterestingQuestions.Tests
         [DataTestMethod]
         [DataRow(data1: new char[] { 'O', 'n', 'e' })]
         [DataRow(data1: new char[] { 'M', 'o', 'm', 'm', 'y' })]
+        [DataRow(data1: new char[] { 'M', 'o', 'o', 'n' })]
         public void IsAPalindrome_EventAndOddArrays_False(char[] value)
         {
             // Arrange
@@ -46,7 +49,7 @@ namespace InterestingQuestions.Tests
 
             // Action
             var result = Palindrome.IsAPalindrome(v);
-            
+
             // Assert
             Assert.IsFalse(result);
         }
